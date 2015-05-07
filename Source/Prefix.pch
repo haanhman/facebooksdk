@@ -1,0 +1,28 @@
+//
+// Prefix header for all source files of the 'Test' target in the 'Test' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "cocos2d.h"
+#import "cocos2d-ui.h"
+#import "CCBuilderReader.h"
+#import "AppDelegate.h"
+
+#define NO_FACEBOOK_INTEGRATION
+#define NS_DESIGNATED_INITIALIZER __attribute__((objc_designated_initializer))
+
+static inline NSString * fullpath(NSString *strpath){
+    return [[NSBundle mainBundle] pathForResource:strpath ofType:nil];
+}
+
+#define appcontroller (AppController *)[[UIApplication sharedApplication] delegate]
+
+#endif
